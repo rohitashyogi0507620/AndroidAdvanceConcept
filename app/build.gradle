@@ -57,5 +57,15 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
 
+
+    //Scarlet for websocket api
+    def scarlet_version = '0.1.12'
+    implementation "com.tinder.scarlet:scarlet:$scarlet_version"
+   // Optional dependencies, based on your setup.
+    implementation "com.tinder.scarlet:lifecycle-android:$scarlet_version"
+    implementation "com.tinder.scarlet:websocket-okhttp:$scarlet_version"
+    implementation "com.tinder.scarlet:message-adapter-moshi:$scarlet_version"
+    implementation "com.tinder.scarlet:stream-adapter-coroutines:$scarlet_version"
+
 }
 

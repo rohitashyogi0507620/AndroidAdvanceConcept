@@ -13,30 +13,30 @@ class WebSocketActivity : AppCompatActivity() {
         binding=ActivityWebSocketBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val scarletInstance = Scarlet.Builder()
-            .webSocketFactory(okHttpClient.newWebSocketFactory("wss://ws-feed.gdax.com"))
-            .addMessageAdapterFactory(MoshiMessageAdapter.Factory())
-            .addStreamAdapterFactory(RxJava2CallAdapterFactory())
-            .build()
-
-        val gdaxService = scarletInstance.create<WebSocketInterface>()
-
-
-        val BITCOIN_TICKER_SUBSCRIBE_MESSAGE = Subscribe(
-            productIds = listOf("BTC-USD"),
-            channels = listOf("ticker")
-        )
-
-        gdaxService.observeWebSocketEvent()
-            .filter { it is WebSocket.Event.OnConnectionOpened<*> }
-            .subscribe({
-                gdaxService.sendSubscribe(BITCOIN_TICKER_SUBSCRIBE_MESSAGE)
-            })
-
-        gdaxService.observeTicker()
-            .subscribe({ ticker ->
-                Log.d("Bitcoin price is ${ticker.price} at ${ticker.time}")
-            })
+//        val scarletInstance = Scarlet.Builder()
+//            .webSocketFactory(okHttpClient.newWebSocketFactory("wss://ws-feed.gdax.com"))
+//            .addMessageAdapterFactory(MoshiMessageAdapter.Factory())
+//            .addStreamAdapterFactory(RxJava2CallAdapterFactory())
+//            .build()
+//
+//        val gdaxService = scarletInstance.create<WebSocketInterface>()
+//
+//
+//        val BITCOIN_TICKER_SUBSCRIBE_MESSAGE = Subscribe(
+//            productIds = listOf("BTC-USD"),
+//            channels = listOf("ticker")
+//        )
+//
+//        gdaxService.observeWebSocketEvent()
+//            .filter { it is WebSocket.Event.OnConnectionOpened<*> }
+//            .subscribe({
+//                gdaxService.sendSubscribe(BITCOIN_TICKER_SUBSCRIBE_MESSAGE)
+//            })
+//
+//        gdaxService.observeTicker()
+//            .subscribe({ ticker ->
+//                Log.d("Bitcoin price is ${ticker.price} at ${ticker.time}")
+//            })
 
 
     }

@@ -2,13 +2,17 @@ package com.yogify.androidadvanceconcept
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import com.yogify.androidadvanceconcept.databinding.FragmentFirstBinding
 import com.yogify.androidadvanceconcept.rxjava.RXJavactivity
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.launch
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -35,8 +39,20 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.RxJAva.setOnClickListener {
-            startActivity(Intent(requireContext(),RXJavactivity::class.java))
+            startActivity(Intent(requireContext(), RXJavactivity::class.java))
         }
+
+        binding.FlowChannel.setOnClickListener {
+        }
+
+        val myIntFlow: Flow<String> = flow { emit("sdsfdgdfgf") }
+
+        GlobalScope.launch{
+
+            myIntFlow.collect { Log.d("DATA", it) }
+        }
+
+
 
     }
 

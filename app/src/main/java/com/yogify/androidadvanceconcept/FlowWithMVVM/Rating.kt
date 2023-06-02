@@ -1,4 +1,4 @@
-package com.yogify.androidadvanceconcept.rxjava
+package com.yogify.androidadvanceconcept.FlowWithMVVM
 
 data class Rating(
     var count: Int,

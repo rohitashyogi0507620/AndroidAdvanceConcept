@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.yogify.androidadvanceconcept.FlowWithMVVM.FlowActivity
 import com.yogify.androidadvanceconcept.databinding.FragmentFirstBinding
 import com.yogify.androidadvanceconcept.rxjava.RXJavactivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -17,6 +19,7 @@ import kotlinx.coroutines.launch
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
@@ -43,6 +46,7 @@ class FirstFragment : Fragment() {
         }
 
         binding.FlowChannel.setOnClickListener {
+            startActivity(Intent(requireContext(),FlowActivity::class.java))
         }
 
         val myIntFlow: Flow<String> = flow { emit("sdsfdgdfgf") }

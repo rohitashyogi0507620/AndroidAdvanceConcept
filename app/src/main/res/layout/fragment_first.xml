@@ -20,7 +20,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/FlowChannel"
             android:layout_width="match_parent"
-            android:text="Flow and Channels"
+            android:text="Flow With MVVM "
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

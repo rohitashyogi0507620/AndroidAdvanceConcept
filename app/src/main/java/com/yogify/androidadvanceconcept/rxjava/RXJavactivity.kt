@@ -6,7 +6,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.jakewharton.rxbinding4.view.clicks
+import com.yogify.androidadvanceconcept.FlowWithMVVM.Product
 import com.yogify.androidadvanceconcept.databinding.ActivityRxjavactivityBinding
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -14,6 +16,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
+@AndroidEntryPoint
 class RXJavactivity : AppCompatActivity() {
     // Observable , Oprater , Observer Three Main Component in rxjava
 

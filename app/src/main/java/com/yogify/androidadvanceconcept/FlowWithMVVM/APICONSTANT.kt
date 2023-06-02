@@ -1,4 +1,4 @@
-package com.yogify.androidadvanceconcept.rxjava
+package com.yogify.androidadvanceconcept.FlowWithMVVM
 
 object APICONSTANT {
     const val BASE_URL = "https://fakestoreapi.com/"

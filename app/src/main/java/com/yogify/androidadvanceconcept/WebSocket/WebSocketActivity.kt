@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.tinder.scarlet.Scarlet
 import com.yogify.androidadvanceconcept.databinding.ActivityWebSocketBinding
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
+@AndroidEntryPoint
 class WebSocketActivity : AppCompatActivity() {
     lateinit var binding: ActivityWebSocketBinding
     override fun onCreate(savedInstanceState: Bundle?) {

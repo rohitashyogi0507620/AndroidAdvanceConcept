@@ -15,6 +15,7 @@ class WebSocketActivity : AppCompatActivity() {
         binding=ActivityWebSocketBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //  // https://api.coinpaprika.com/
 //        val scarletInstance = Scarlet.Builder()
 //            .webSocketFactory(okHttpClient.newWebSocketFactory("wss://ws-feed.gdax.com"))
 //            .addMessageAdapterFactory(MoshiMessageAdapter.Factory())

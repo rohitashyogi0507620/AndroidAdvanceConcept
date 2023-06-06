@@ -5,6 +5,8 @@ import android.os.Bundle
 import com.tinder.scarlet.Scarlet
 import com.yogify.androidadvanceconcept.databinding.ActivityWebSocketBinding
 import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
 @AndroidEntryPoint
@@ -16,6 +18,7 @@ class WebSocketActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //  // https://api.coinpaprika.com/
+        //https://api.coinpaprika.com/v1/global
 //        val scarletInstance = Scarlet.Builder()
 //            .webSocketFactory(okHttpClient.newWebSocketFactory("wss://ws-feed.gdax.com"))
 //            .addMessageAdapterFactory(MoshiMessageAdapter.Factory())
@@ -40,6 +43,7 @@ class WebSocketActivity : AppCompatActivity() {
 //            .subscribe({ ticker ->
 //                Log.d("Bitcoin price is ${ticker.price} at ${ticker.time}")
 //            })
+
 
 
     }
